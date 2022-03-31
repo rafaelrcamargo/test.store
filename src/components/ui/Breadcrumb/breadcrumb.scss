@@ -1,0 +1,61 @@
+@import "src/styles/scaffold";
+
+[data-store-breadcrumb] {
+  width: 100%;
+
+  [data-breadcrumb-list] {
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+
+    li {
+      display: inline-flex;
+
+      &:first-child a {
+        display: flex;
+        align-items: center;
+      }
+
+      &:not(:first-child) {
+        display: inline;
+        min-width: var(--fs-spacing-7);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        @include media("<=tablet") { max-width: 30%; }
+      }
+    }
+
+    [data-breadcrumb-item] {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      svg {
+        color: var(--fs-color-text);
+      }
+    }
+
+    [data-breadcrumb-divider] {
+      height: var(--fs-spacing-3);
+      margin: 0 var(--fs-spacing-2) 0 var(--fs-spacing-1);
+      border-left: var(--fs-border-width-default) solid var(--fs-border-color-light);
+    }
+
+    [data-store-link] {
+      display: inline;
+      padding: 0;
+
+      &:visited {
+        color: var(--fs-color-link);
+      }
+    }
+
+    [data-breadcrumb-item="current"] {
+      color: var(--fs-color-text-light);
+    }
+  }
+}
